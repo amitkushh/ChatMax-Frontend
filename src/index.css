@@ -1,1 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
+
+* {
+  font-family: "Instrument Serif", "Inter", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --background: #0d0d0f;
+  --lightdark: #121214;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--white);
+}
+
+h1, p {
+  font-family: "Inter";
+}

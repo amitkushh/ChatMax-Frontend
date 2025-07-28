@@ -1,12 +1,13 @@
 import "./App.css";
+import Sidebar from "./components/Sidebar/sidebar";
+import Main from "./components/Main/main";
 
 function App() {
   return (
-    <>
-      <div>
-        <h1 className="text-5xl font-bold text-red-500">Hello</h1>
-      </div>
-    </>
+    <div className="flex">
+      <Sidebar />
+      <Main />
+    </div>
   );
 }
 
