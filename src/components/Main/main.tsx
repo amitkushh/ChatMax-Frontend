@@ -26,7 +26,7 @@ function Main() {
   ];
 
   return (
-    <div className="flex flex-col pt-36 px-36">
+    <div className="flex flex-col justify-center min-h-screen px-5 py-7 sm:px-10 md:pt-36 md:px-36">
       {/* menu */}
       <div className=""></div>
 
@@ -40,11 +40,11 @@ function Main() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="sm:grid hidden sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {cardContent.map((card, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between bg-[#303033] p-5 rounded-md  h-48 w-48"
+              className="flex flex-col justify-between bg-[#1e1e20] p-5 rounded-md  md:h-48 md:w-48 hover:bg-[#1a1a1b] cursor-pointer transition-all duration-300 ease-in-out"
             >
               <p>{card.para}</p>
               <div className="flex justify-end">
@@ -56,7 +56,20 @@ function Main() {
       </div>
 
       {/* Search  */}
-      <div></div>
+      <div className="mt-11">
+        <div className="flex justify-between items-center bg-[#1e1e20] rounded-4xl py-2 px-6 gap-4">
+          <input
+            type="text"
+            placeholder="Ask Anything"
+            className="outline-none w-full py-5 text-lg"
+          />
+          <div className="flex justify-center items-center gap-3">
+            <img src={Image} alt="image" className="cursor-pointer" />
+            <img src={Microphone} alt="microphone" className="cursor-pointer" />
+            <img src={Send} alt="send" className="cursor-pointer" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

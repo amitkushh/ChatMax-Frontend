@@ -28,14 +28,16 @@ function Sidebar() {
 
   return (
     <div
-      className={`bg-(--lightdark) border-r border-dashed border-white/10 h-screen flex-col justify-between py-5 hidden md:flex ${
-        collapseMenu === true ? "w-40" : "w-64"
+      className={`bg-(--lightdark) border-r border-dashed border-white/10 min-h-screen flex-col justify-between py-5 hidden md:flex  ${
+        collapseMenu ? "w-64" : "w-23"
       }`}
     >
       <div>
         <div className="border-b border-dotted border-white/10 mb-5">
           <div className="mb-5 flex justify-between items-center px-5">
-            <span className="text-2xl font-medium">ChatMax</span>
+            {collapseMenu ? (
+              <span className="text-2xl font-medium">ChatMax</span>
+            ) : null}
             <img
               src={Burger}
               alt="menu"
@@ -49,28 +51,35 @@ function Sidebar() {
         <div className="px-5">
           <div>
             <span className="flex gap-2 rounded-full bg-[#1e1e20] py-2 px-4 cursor-pointer">
-              <img src={Plus} alt="plus icon" /> New Chat
+              <img src={Plus} alt="plus icon" />
+              {collapseMenu ? <span>New Chat</span> : null}
             </span>
           </div>
-
           {/* Recent tab */}
-          <div className="flex flex-col gap-2 mt-5">
-            <div>
-              <span className="text-xl font-semibold">Recent</span>
-            </div>
+          {collapseMenu ? (
+            <div className="flex flex-col gap-2 mt-5">
+              <div>
+                <span className="text-xl font-semibold">Recent</span>
+              </div>
 
-            <div>
-              <span>What is React?</span>
+              <div>
+                <span className="cursor-pointer hover:text-white/80">
+                  What is React?
+                </span>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
       </div>
       <div className="px-5">
         <ul className="flex flex-col gap-2">
           {bottomOptions.map((menu, index) => (
-            <li key={index} className="flex items-center gap-2 cursor-pointer">
+            <li
+              key={index}
+              className="flex items-center gap-2 cursor-pointer hover:text-white/80"
+            >
               <img src={menu.icon} alt={menu.name} />
-              {menu.name}
+              {collapseMenu ? <span>{menu.name}</span> : null}
             </li>
           ))}
         </ul>

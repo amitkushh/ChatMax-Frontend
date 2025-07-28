@@ -18,6 +18,10 @@ body {
   color: var(--white);
 }
 
-h1, p {
+h1, p, input {
   font-family: "Inter";
+}
+
+p {
+  color: rgb(138, 138, 138);
 }
